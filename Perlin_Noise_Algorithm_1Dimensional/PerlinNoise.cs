@@ -6,7 +6,7 @@ public class PerlinNoise {
 	long seed;
 	
 	public PerlinNoise(long seed)
-    {
+        {
 		this.seed = seed;
 	}
 	
@@ -16,7 +16,7 @@ public class PerlinNoise {
      * @param int range - maximum possible value.
      */
 	private int random(long x, int range)
-    {
+        {
 		return (int)(((x+seed)^5) % range);
 	}
 	
@@ -26,13 +26,14 @@ public class PerlinNoise {
      * @param int range - the maximum possible value.
      */
 	public int getNoise(int x, int range)
-    {
+        {
 		int chunkSize = 16;
 		float noise = 0;
 		
 		range /= 2;
 		
-		while(chunkSize > 0){
+		while(chunkSize > 0)
+		{
 			int chunkIndex = x / chunkSize;
 			float prog = (x % chunkSize) / (chunkSize * 1f);
 			float lRandom = random(chunkIndex, range);
