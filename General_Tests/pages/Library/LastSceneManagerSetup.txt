@@ -1,0 +1,4 @@
+sceneSetups:
+- path: C:/Users/Newt-/Desktop/tutorial/Assets/terrain.unity
+  isLoaded: 1
+  isActive: 1
