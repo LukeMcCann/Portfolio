@@ -1,0 +1,102 @@
+<!Doctype <!DOCTYPE html>
+<html>
+<head>
+  <title>About Us</title>
+
+<meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Site Template" />
+   <meta name="keywords" content="enter keywords here" />
+    <meta name="author" content="Newton McCann" />
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<!--Personal CSS stylesheet-->
+<link rel="stylesheet" type="text/css" href="style/main.css">  
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="#"><em>Dream</em>Scape</a>
+    </div> <!--End Of Navbar Header-->
+     <div class="collapse navbar-collapse" id="myNavbar">
+       <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a>
+        <li class="active"><a href="contact.html">Get A Quote</a></li>
+        <li><a href="contactUs.html">Contact</a></li>
+       </ul>
+       <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+       </ul>
+      </div> <!--End Of Container-fluid-->
+     </nav> <!--End of Navbar-->
+
+
+<div class="contactform">
+<span style="font-size: 9pt; font-family: Verdana; color: #000000;">
+
+<form action="contact.php" method="post">
+<fieldset><legend><span style="font-size: 12px;">&nbsp;CONTACT DETAILS&nbsp;</span></legend>
+ <label for="firstname" class="left">First name:</label>
+<font color="#FF0000">*</font><input type="text" name="firstname" id="firstname" class="field" value="" maxlength="35" tabindex="1" /><br /><br />
+<label for="lastname" class="left">Last name:</label>
+<font color="#FF0000">*</font><input type="text" name="lastname" id="lastname" class="field" value="" maxlength="35" tabindex="2" /><br /><br />
+
+<label for="organization" class="left">Organization:</label>
+<font color="#FF0000">&nbsp;&nbsp;</font><input type="text" name="organization" id="organization" class="field" value="" maxlength="45" tabindex="3" /><br /><br />
+<label for="city" class="left">City:</label>
+<font color="#FF0000">*</font><input type="text" name="city" id="city" class="field" value="" maxlength="35" tabindex="4" /><br /><br />
+<label for="state" class="left">State:</label>
+<font color="#FF0000">*</font><input type="text" name="state" id="state" class="field" value="" maxlength="2" tabindex="5" /><br /><br />
+
+<label for="phone" class="left">Phone:</label>
+<font color="#FF0000">&nbsp;&nbsp;</font><input type="text" name="phone" id="phone" class="field" value="" maxlength="10" tabindex="6" /><br /><br />
+<label for="email" class="left">Email:</label>
+<font color="#FF0000">*</font><input type="text" name="email" id="email" class="field" value="" maxlength="50" tabindex="7" /><br /><br />
+<label for="website" class="left">Website:</label>
+<font color="#FF0000">&nbsp;&nbsp;</font><input type="text" name="website" id="website" class="field" value="" maxlength="60" tabindex="8" /><br /><br />
+</fieldset>
+
+<fieldset><legend><span style="font-size: 12px;">&nbsp;MESSAGE DETAILS&nbsp;</span></legend>
+<label for="subject" class="left">Subject:</label>
+<font color="#FF0000">*</font><input type="text" name="subject" id="subject" class="field" value="" maxlength="35" tabindex="9" /><br /><br />
+<label for="message" class="left">Message:</label>
+<font color="#FF0000">&nbsp;&nbsp;</font><textarea name="message" id="message" cols="45" rows="10" maxlength="400" tabindex="10"></textarea><br /><br />
+<input type="submit" name="submit" id="submit" class="button" value="Send Message" tabindex="11" /><br /><br />
+
+</fieldset>
+</form>
+</span>
+</div>
+
+    <p style="color: #f00">Your Message Sent Successfully!</p>
+
+
+       <div class="clearfix"></div>
+    </div>
+
+    <div class="footer">
+      <div class="container">
+        <p>&copy; <em>Dream</em>Scape 2015</p>
+      </div>
+    </div>
+
+</body>
+</html>

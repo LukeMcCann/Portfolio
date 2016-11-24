@@ -1,0 +1,187 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 0px;
+}
+
+.jumbotron {
+  height: 800px;
+  background-image: url(../images/dream.jpg);
+}
+
+.navbar {
+	margin-bottom: 0;
+}
+.nav li {
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.main {
+  position: relative;
+  top: 180px;
+  text-align: center;
+}
+
+.main h1 {
+  color: #333333;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 70px;
+  margin-top: 0;
+  margin-bottom: 80px;
+  text-transform: uppercase;
+}
+
+.btn-main {
+  background-color: #333;
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 1.3px;
+  padding: 16px 40px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.supporting {
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+
+.supporting .col {
+  float: left;
+  width: 33%;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+
+.supporting img {
+  height: 32px;
+}
+
+.supporting h2 {
+  font-weight: 600;
+  font-size: 23px;
+  text-transform: uppercase;
+}
+
+.supporting p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 0 50px;
+  margin-bottom: 40px;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.footer p {
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+address {
+	font-size: 9px
+}
+
+@media (max-width: 500px) {
+  .main h1 {
+    font-size: 50px;
+    padding: 0 40px;
+  }
+
+  .supporting .col {
+    width: 100%;
+  }
+}
+
+.contactform {
+  width:418px;
+  margin:2.0em 0 0 0;
+  padding:10px 10px 0 10px;
+  border:solid 1px rgb(200,200,200);
+  background-color:rgb(240,240,240);
+  margin-left: auto;
+  margin-right: auto;
+}
+.contactform fieldset {
+  padding:20px 0 0 0 !important;
+  padding:0;
+  margin:0 0 20px 0;
+  border:solid 1px rgb(220,220,220);
+}
+.contactform fieldset legend {
+  margin:0 0 0 5px !important;
+  margin:0 0 20px 5px;
+  padding:0 2px 0 2px;
+  color:rgb(80,80,80);
+  font-weight:bold;
+  font-size:130%;
+}
+.contactform label.left {
+  float:left;
+  width:100px;
+  margin:0 0 0 10px;
+  padding:2px;
+  font-size:110%;
+  text-align:left;
+}
+.contactform select.combo {
+  width:175px;
+  padding:2px;
+  border:solid 1px rgb(200,200,200);
+  font-family:verdana,arial,sans-serif;
+  font-size:110%;
+}
+.contactform input.field {
+  width:275px;
+  padding:2px;
+  border:solid 1px rgb(200,200,200);
+  font-family:verdana,arial,sans-serif;
+  font-size:110%;
+}
+.contactform textarea {
+  width:275px;
+  padding:2px;
+  border:solid 1px rgb(200,200,200);
+  font-family:verdana,arial,sans-serif;
+  font-size:110%;
+}
+.contactform input.button {
+  float:right;
+  width:9.0em;
+  margin-right:19px;
+  margin-bottom:12px;
+  padding:1px !important;
+  padding:0;
+  background:rgb(225,225,225);
+  border:solid 1px rgb(150,150,150);
+  text-align:center;
+  font-family:verdana,arial,sans-serif;
+  color:rgb(150,150,150);
+  font-size:110%;
+}
+.contactform input.button:hover {
+  cursor: pointer;
+  border:solid 1px rgb(80,80,80);
+  background:rgb(220,220,220);
+  color:rgb(80,80,80);
+}
