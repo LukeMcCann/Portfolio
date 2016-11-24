@@ -1,2 +1,3 @@
-# TestProjects
-A repository for written algorithms and test programmes
+# Portfolio
+
+Repository created to store all completed projects, and important code.
