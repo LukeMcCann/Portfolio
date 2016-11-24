@@ -1,0 +1,44 @@
+#!/bin/bash
+#############################################################################################
+# digitalDay.bash - takes a single numeric argument and prints out the day of the week
+#                   based on the formula, number modulo 7.
+#
+# Author - Luke McCann
+# Version 1.0 - 15/12/2015
+###########################################################################################
+if argument is equal to -help; then
+	echo "Recommended Useage digitalDay.bash int"
+	echo "Please only enter numeric arguments."
+# Declaration of variables for the days of the week.
+else
+if argument is less than 1; then
+   echo "Requires a numeric argument."
+   echo "Recommended Useage: "
+else
+if argument is not an integer; then
+
+variable=$((argument modulo 7));
+
+case $variable-name in
+	pattern1) echo command 1
+    ;;
+    pattern2) echo command 2
+    ;;
+    pattern3) echo command 3
+    ;;
+    pattern4) echo command 4
+    ;;
+    pattern5) echo command 5
+    ;;
+    pattern5) echo command 6
+    ;;
+    pattern7) echo command 7
+    ;;
+    default) default command
+esac
+else 
+   echo "Not an integer, please enter a numeric value."
+fi
+fi
+fi
+exit 0
