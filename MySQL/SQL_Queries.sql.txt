@@ -1,0 +1,143 @@
+1.Display the name of each shop and the total number of customers per shop; 
+order by customers from highest to lowest.
+
+SELECT 
+        S.`shopname`, 
+        COUNT(DISTINCT custid) AS 'Customers'
+    FROM frs_shop AS S, 
+    frs_register AS R
+    WHERE 
+        S.`shopid` = R.`shopid` 
+    GROUP BY
+         S.`shopname`
+    ORDER BY 
+        Customers DESC;
+
+2.Display the name of each shop, the total money earned per shop 
+(AS Takings) and the total number of films rented per shop (AS Transactions).
+
+SELECT 
+        S.`shopname`, 
+        SUM(F.`rentalrate` + F.`overduecharge`) AS 'Takings',
+        COUNT(F.`payid`) AS 'Transactions'
+    FROM frs_filmrental AS F 
+    INNER JOIN frs_shop AS S 
+    ON 
+        S.`shopid` = F.`shopid` 
+    GROUP BY 
+        S.`shopid`;
+
+3.   Display the total number of transactions attributed to all employees, 
+giving employee number and employee name (this includes payments and returns).
+
+SELECT
+  E.`empnin`,
+  E.`empname`,
+  (SELECT COUNT(empnin)
+  FROM
+    frs_payment AS P
+  WHERE
+    gPay.`empnin` = P.`empnin`) + COUNT(empnin) AS 'Total'
+FROM
+ (SELECT
+    E.`empnin`,
+    F.`payid`,
+    F.`rstatusid`
+  FROM
+    frs_filmrental AS F
+  GROUP BY
+    P.`payid`) AS 'gPay'
+  NATURAL JOIN
+    frs_employee
+  WHERE
+    P.`rstatusid` != 3
+  GROUP BY
+    E.`empnin`
+  ORDER BY Total DESC;
+
+4.Write a function to get the payment sales figures from any given shop. 
+The shop should be searched for by name.
+
+DELIMITER // 
+CREATE FUNCTION getShopSales(name TEXT) 
+    RETURNS DECIMAL(5,2)
+    BEGIN 
+    DECLARE salesFigures DECIMAL(5,2);
+    SELECT SUM(rentalrate) INTO salesFigures
+    FROM frs_Shop, frs_FilmRental
+    WHERE frs_Shop.shopid = frs_FilmRental.shopid 
+    AND frs_Shop.shopname = name;
+    RETURN salesFigures; 
+    END // 
+    DELIMITER ;
+
+/*@Test
+SELECT getShopSales('Flixters') AS 'Flixters Sales'*/
+
+
+5.Create a view table of sales figures for each individual shop 
+(displaying the shop by name), the date the sales figures were 
+created and the manager of the shop (displaying the shop by name).
+
+CREATE VIEW v AS
+SELECT 
+       S.`shopname` , 
+       E.`empname` , 
+       SUM(F.`rentalrate` + F.`overduecharge`) Takings, 
+       CURDATE() date
+    FROM frs_FilmRental AS F
+    JOIN 
+        frs_Shop AS S 
+    ON 
+        F.`shopid` = s.`shopid`
+    JOIN 
+        frs_Employee e 
+    ON
+        F.`empnin` = E.`empnin`
+    GROUP BY 
+        F.`shopid`;
+
+6.Write a query to find the top sales person in the company. 
+Display the employee name, the shop where he/she is employed 
+and the value of sales. Do not include overdue charges.
+
+SELECT
+        S.`shopname`,
+        E.empname AS 'Employee Name',
+        SUM(P.amount) AS 'Sales'
+    FROM frs_payment AS P
+    JOIN 
+        frs_Employee AS E
+    ON 
+        E.empnin = P.empnin
+    JOIN 
+        frs_Shop AS S
+    ON 
+        S.shopid = E.shopid
+    GROUP BY 
+        E.empname
+    ORDER BY Sales DESC
+    Limit 1;
+
+
+7.Display the name of the top sales person within each shop. 
+Display the employee name, the shop where he/she is employed and 
+the value of sales for that person.
+
+SELECT
+        S.`shopname`,
+        E.empname AS 'Employee Name',
+        SUM(P.amount) AS 'Sales'
+    FROM frs_payment AS P
+    JOIN 
+        frs_Employee AS E
+    ON 
+        E.empnin = P.empnin
+    JOIN 
+        frs_Shop AS S
+    ON 
+        S.shopid = E.shopid
+    GROUP BY 
+        E.empname
+    ORDER BY 
+        Sales DESC;
