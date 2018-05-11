@@ -13,13 +13,14 @@ if [ $# -lt 1 ]
 then
    echo "Argument Required."
    echo "Recommended Useage: del.bash file"
-   fi
+fi
 
 # Checks if the directory .waste already exists.
 # If the directory does not exist it creates a new .waste directory
 # then moves the file.
 # if it does then it simply moves the file.
-if [ ! -d .waste ];then
+if [ ! -d .waste ];
+then
    mkdir .waste
    echo "Creating .waste directory...."
 else
