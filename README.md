@@ -1,3 +1,3 @@
-# Portfolio
+# University Portfolio Repo
 
-Repository created to store all completed projects, and important code.
+Repository created for storing Univeristy work whilst at University.
